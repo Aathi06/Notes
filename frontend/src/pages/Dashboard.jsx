@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../api/axios";
 import NoteCard from "../components/NoteCard";
 import Modal from "../components/Modal";
+import useNaviagte from "react-router-dom";
 
 export default function Dashboard() {
   const [notes, setNotes] = useState([]);
@@ -10,6 +11,7 @@ export default function Dashboard() {
   const [selected, setSelected] = useState(null);
   const [mode, setMode] = useState(null); // add | edit | view | delete
   const [msg, setMsg] = useState("");
+  const navigate = useNaviagte();
 
   useEffect(() => {
     fetchNotes();
@@ -50,7 +52,7 @@ export default function Dashboard() {
 
   const logout = () => {
     localStorage.removeItem("token");
-    window.location.href = "/login";
+    navigate("/login");
   };
 
   return (
