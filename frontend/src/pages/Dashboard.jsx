@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../api/axios";
 import NoteCard from "../components/NoteCard";
 import Modal from "../components/Modal";
-import useNaviagte from "react-router-dom";
+import {useNaviagte} from "react-router-dom";
 
 export default function Dashboard() {
   const [notes, setNotes] = useState([]);
