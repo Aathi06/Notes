@@ -18,10 +18,6 @@ connectDB();
 app.use("/api/auth",authRoutes);
 app.use("/api/notes",noteRoutes);
 
-app.get("/health",(req,res)=>{
-    res.json({status: "ok"});
-})
-
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
